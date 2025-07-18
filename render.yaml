@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: roda-prompt-forge
+    env: python
+    buildCommand: pip install -r assistants/roda_prompt_generator/requirements.txt
+    startCommand: python assistants/roda_prompt_generator/app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SERP_KEY
+        sync: false
